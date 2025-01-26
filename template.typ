@@ -27,6 +27,8 @@
 
   show: thmrules.with(qed-symbol: [❏])
 
+  // set math.equation(numbering: "(1)")
+
   align(center)[
     #block(text(1.75em, font: "Shippori Antique B1", title))
   ]
@@ -55,7 +57,9 @@
 
   body
 
-  bibliography("references.bib", style: "springer-lecture-notes-in-computer-science")
+
+  set text(lang: "en")
+  bibliography("references.bib")
 }
 
 #let thmplain = thmbox.with(
@@ -158,7 +162,7 @@
 
 #let Thm = $upright("Thm")$
 #let Bew = $bold(upright("Pr"))$
-#let Con = $bold(upright("Con"))$
+#let Con(T) = $upright("Con")_#T$
 
 #let ulcorner = $⌈$
 #let urcorner = $⌉$
